@@ -156,6 +156,8 @@ radiantSlots = {0,1,2,3,4};
 direSlots = {5,6,7,8,9};
 maxPlayerID = 9;
 
+test = 1;
+
 -- TODO
 -- 1. determine which slots contain players - don't pick for those slots
 -- 2. determine what heroes have already been picked - don't pick those heroes - DONE
@@ -165,6 +167,35 @@ maxPlayerID = 9;
 function Think()
   local startPickTime = -70;
   local timePerPick = 2;
+
+  if test == 1 then
+    test = 2;
+    local team = GetTeam();
+    print("Team : ", team);
+    local p0 = IsPlayerInHeroSelectionControl(0);
+    local p1 = IsPlayerInHeroSelectionControl(1);
+    local p2 = IsPlayerInHeroSelectionControl(2);
+    local p3 = IsPlayerInHeroSelectionControl(3);
+    local p4 = IsPlayerInHeroSelectionControl(4);
+    local p5 = IsPlayerInHeroSelectionControl(5);
+    local p6 = IsPlayerInHeroSelectionControl(6);
+    local p7 = IsPlayerInHeroSelectionControl(7);
+    local p8 = IsPlayerInHeroSelectionControl(8);
+    local p9 = IsPlayerInHeroSelectionControl(9);
+    local p10 = IsPlayerInHeroSelectionControl(10);
+    local p11 = IsPlayerInHeroSelectionControl(11);
+    print("0-4 : ", p0, p1, p2, p3, p4);
+    print("5-9 : ", p5, p6, p7, p8, p9);
+    print("10-11 : ", p10, p11)
+    local dotatime = DotaTime();
+    local gametime = GameTime();
+    local realtime = RealTime();
+    print("dotatime : ", dotatime);
+    print("gametime : ", gametime);
+    print("realtime : ", realtime);
+    -- local player = npc:GetPlayer();
+    -- print(player);
+  end
 
   if not quickMode and (DotaTime() < startPickTime) then
     return;
@@ -290,3 +321,24 @@ function GetRandomHero()
 
   return hero;
 end
+
+-- function UpdateLaneAssignments()
+--   local team = GetTeam();
+--   if team == TEAM_RADIANT then
+--     return {
+--       [1] = LANE_BOT,
+--       [2] = LANE_TOP,
+--       [3] = LANE_BOT,
+--       [4] = LANE_MID,
+--       [5] = LANE_BOT,
+--     }
+--   elseif team == TEAM_DIRE then
+--     return {
+--       [1] = LANE_BOT,
+--       [2] = LANE_BOT,
+--       [3] = LANE_TOP,
+--       [4] = LANE_BOT,
+--       [5] = LANE_MID,
+--     }
+--   end
+-- end

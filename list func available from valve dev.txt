@@ -1,0 +1,171 @@
+Global
+(details WIP)
+unit GetBot()
+int GetTeam()
+GetTeamMember(?, ?)
+float DotaTime()
+float GameTime()
+float RealTime()
+float/int GetUnitToUnitDistance(unit: unit, unit: unit)
+GetUnitToLocationDistance
+GetWorldBounds
+IsLocationPassable
+GetHeightLevel
+vector? GetLocationAlongLane(x: float, y: float)item:IsFullyCastable
+GetNeutralSpawners
+int GetItemCost(name: string)
+bool IsItemPurchasedFromSecretShop(name: string)
+bool IsItemPurchasedFromSideShop(name: string)
+GetItemStockCount
+GetPushLaneDesire
+GetDefendLaneDesire
+GetFarmLaneDesire
+GetRoamDesire
+GetRoamTarget
+GetRoshanDesire
+int GetGameState()
+- Returns the current game state
+float GetGameStateTimeRemaining()
+- Returns how much time is remaining in the curren game state, if applicable
+int GetGameMode()
+- Returns the current game mode
+int GetHeroPickState()
+- Returns the current hero pick state
+IsPlayerInHeroSelectionControl
+SelectHero
+GetSelectedHeroName
+IsInCMBanPhase
+IsInCMPickPhase
+GetCMPhaseTimeRemaining
+GetCMCaptain
+SetCMCaptain
+IsCMBannedHero
+IsCMPickedHero
+CMBanHero
+CMPickHero
+RandomInt
+RandomFloat
+RandomYawVector
+RollPercentage
+Min
+Max
+Clamp
+RemapVal
+RemapValClamped
+DebugDrawLine
+DebugDrawCircle
+DebugDrawText
+
+Unit-Scoped
+void Action_ClearActions(stop: bool)
+void Action_MoveToLocation(location: vector)
+void Action_MoveToUnit(unit: unit)
+void Action_AttackUnit(unit: unit, once: bool)
+void Action_AttackMove(location: vector)
+void Action_UseAbility(skill: skill)
+void Action_UseAbilityOnEntity(skill: skill, target: unit)
+void Action_UseAbilityOnLocation(skill: skill, location: vector)
+void Action_UseAbilityOnTree(skill: skill, tree: int)
+void Action_PickUpRune(rune: unit)
+void Action_PickUpItem(item: item)
+void Action_DropItem(item: item, location: vector)
+void Action_PurchaseItem(name: string)
+void Action_SellItem(item: item)
+void Action_Buyback()
+void Action_LevelAbility(name: string)
+int GetDifficulty()
+string GetUnitName()
+int GetPlayer
+bool IsHero()
+bool IsCreep()
+bool IsTower()
+bool IsBuilding()
+bool IsFort()
+bool IsIllusion()
+bool CanBeSeen()
+int/BOT_MODES GetActiveMode()
+int/MODE_DESIRES GetActiveModeDesire()
+int/float GetHealth()
+int/float GetMaxHealth()
+int/float GetMana()
+int/float GetMaxMana()
+bool IsAlive()
+int/float GetRespawnTime()
+bool HasBuyback()
+int GetGold()
+int GetStashValue()
+int GetCourierValue()
+vector GetLocation()
+int GetFacing()
+int GetGroundHeight()
+skill GetAbilityByName(name: string)
+item GetItemInSlot(slot: int)
+bool IsChanneling()
+bool IsUsingAbility()
+vector GetVelocity()
+unit GetAttackTarget()
+vector GetLastSeenLocation()
+float GetTimeSinceLastSeen()
+bool IsRooted()
+bool IsDisarmed()
+bool IsAttackImmune()
+bool IsSilenced()
+bool IsMuted()
+bool IsStunned()
+bool IsHexed()
+bool IsInvulnerable()
+bool IsMagicImmune()
+bool IsNightmared()
+bool IsBlockDisabled()
+bool IsEvadeDisabled()
+bool IsUnableToMiss()
+bool IsSpeciallyDeniable()
+bool IsDominated()
+bool IsBlind()
+bool HasScepter()
+bool WasRecentlyDamagedByAnyHero(seconds: float)
+bool WasRecentlyDamagedByHero(hero: unit, seconds: float)
+float TimeSinceDamagedByAnyHero()
+float TimeSinceDamagedByHero(hero: unit)
+int/float DistanceFromFountain()
+int/float DistanceFromSideShop()
+int/float DistanceFromSecretShop()
+void SetTarget(unit: unit)
+unit GetTarget()
+void SetNextItemPurchaseValue(cost: int)
+int GetNextItemPurchaseValue()
+int GetAssignedLane()
+int/float GetEstimatedDamageToTarget(flag: bool, source: unit, duration: float, damage_type: DAMAGE_TYPES)
+float GetStunDuration(flag: bool)
+float GetSlowDuration(flag: bool)
+bool HasBlink(isAvailable: bool)
+bool HasMinistunOnAttack()
+bool HasSilence(isAvailable: bool)
+bool HasInvisibility(isAvailable: bool)
+bool UsingItemBreaksInvisibility()
+List[pair[key, unit]] GetNearbyHeroes(range: int, isEnemy: bool, mode: BOT_MODES)
+List[pair[key, unit]] GetNearbyTowers(range: int, isEnemy: bool)
+List[pair[key, unit]] GetNearbyCreeps(range: int, isEnemy: bool)
+? FindAoELocation(isEnemy: bool, isHero: bool, location: vector, range: int, radius: int, timeInFuture: float, maxHealth: int)
+vector GetExtrapolatedLocation(seconds: float)
+float GetMovementDirectionStability()
+int/float GetActualDamage(damage: int, damage_type: DAMAGE_TYPES) 
+
+
+Ability scope
+bool CanAbilityBeUpgraded()
+void UpgradeAbility()
+int GetLevel()
+int GetMaxLevel()
+bool IsFullyCastable()
+int GetSpecialValueInt(name: string) "damage" "light_strike_array_aoe" "dragon_slave_width_end"
+int GetCastRange()
+int GetAbiblityDamage()
+
+Item scope
+bool IsFullyCastable()
+
+Vector(x, y)
+
+Vector(-7000,-7000)
+Vector(7200,6500)

@@ -1,0 +1,5 @@
+function Think()
+  local npcBot = GetBot();
+  npcBot:Action_LevelAbility( "lina_light_strike_array" );
+  npcBot:Action_LevelAbility( "lina_laguna_blade" );
+end
